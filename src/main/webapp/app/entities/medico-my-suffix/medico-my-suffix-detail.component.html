@@ -1,0 +1,54 @@
+
+<div *ngIf="medico">
+    <h2><span>Medico</span> {{medico.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Primeiro Nome</span></dt>
+        <dd>
+            <span>{{medico.primeiroNome}}</span>
+        </dd>
+        <dt><span>Ultimo Nome</span></dt>
+        <dd>
+            <span>{{medico.ultimoNome}}</span>
+        </dd>
+        <dt><span>Especialidade</span></dt>
+        <dd>
+            <span>{{medico.especialidade}}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{medico.email}}</span>
+        </dd>
+        <dt><span>Ativo</span></dt>
+        <dd>
+            <span>{{medico.ativo}}</span>
+        </dd>
+        <dt><span>Status</span></dt>
+        <dd>
+            <span>{{medico.status}}</span>
+        </dd>
+        <dt><span>Cidade</span></dt>
+        <dd>
+            <span>{{medico.cidade}}</span>
+        </dd>
+        <dt><span>Estado</span></dt>
+        <dd>
+            <span>{{medico.estado}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'medico-my-suffix/'+ medico.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,72 @@
+<div>
+    <h2>
+        <span>Medicos</span>
+        <button class="btn btn-primary float-right jh-create-entity create-medico-my-suffix" [routerLink]="['/', { outlets: { popup: ['medico-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Medico
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="medicos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="primeiroNome"><span>Primeiro Nome</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ultimoNome"><span>Ultimo Nome</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="especialidade"><span>Especialidade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="email"><span>Email</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ativo"><span>Ativo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="status"><span>Status</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="cidade"><span>Cidade</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="estado"><span>Estado</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let medico of medicos ;trackBy: trackId">
+                <td><a [routerLink]="['../medico-my-suffix', medico.id ]">{{medico.id}}</a></td>
+                <td>{{medico.primeiroNome}}</td>
+                <td>{{medico.ultimoNome}}</td>
+                <td>{{medico.especialidade}}</td>
+                <td>{{medico.email}}</td>
+                <td>{{medico.ativo}}</td>
+                <td>{{medico.status}}</td>
+                <td>{{medico.cidade}}</td>
+                <td>{{medico.estado}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../medico-my-suffix', medico.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'medico-my-suffix/'+ medico.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'medico-my-suffix/'+ medico.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
