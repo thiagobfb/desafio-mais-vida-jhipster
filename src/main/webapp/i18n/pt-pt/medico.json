@@ -1,0 +1,29 @@
+
+{
+    "desafioMaisVidaApp": {
+        "medico" : {
+            "home": {
+                "title": "Medicos",
+                "createLabel": "Criar um(a) novo(a) Medico",
+                "createOrEditLabel": "Criar ou editar um(a) Medico"
+            },
+            "created": "A new Medico is created with identifier {{ param }}",
+            "updated": "A Medico is updated with identifier {{ param }}",
+            "deleted": "A Medico is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Medico {{ id }}?"
+            },
+            "detail": {
+                "title": "Medico"
+            },
+            "primeiroNome": "Primeiro Nome",
+            "ultimoNome": "Ultimo Nome",
+            "especialidade": "Especialidade",
+            "email": "Email",
+            "ativo": "Ativo",
+            "status": "Status",
+            "cidade": "Cidade",
+            "estado": "Estado"
+        }
+    }
+}

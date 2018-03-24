@@ -1,0 +1,9 @@
+{
+    "desafioMaisVidaApp": {
+        "StatusMedicoEnum" : {
+            "null": "",
+            "OCUPADO": "OCUPADO",
+            "DISPONIVEL": "DISPONIVEL"
+        }
+    }
+}

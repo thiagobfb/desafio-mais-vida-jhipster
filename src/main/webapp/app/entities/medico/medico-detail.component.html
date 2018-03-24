@@ -1,0 +1,54 @@
+
+<div *ngIf="medico">
+    <h2><span jhiTranslate="desafioMaisVidaApp.medico.detail.title">Medico</span> {{medico.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="desafioMaisVidaApp.medico.primeiroNome">Primeiro Nome</span></dt>
+        <dd>
+            <span>{{medico.primeiroNome}}</span>
+        </dd>
+        <dt><span jhiTranslate="desafioMaisVidaApp.medico.ultimoNome">Ultimo Nome</span></dt>
+        <dd>
+            <span>{{medico.ultimoNome}}</span>
+        </dd>
+        <dt><span jhiTranslate="desafioMaisVidaApp.medico.especialidade">Especialidade</span></dt>
+        <dd>
+            <span>{{medico.especialidade}}</span>
+        </dd>
+        <dt><span jhiTranslate="desafioMaisVidaApp.medico.email">Email</span></dt>
+        <dd>
+            <span>{{medico.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="desafioMaisVidaApp.medico.ativo">Ativo</span></dt>
+        <dd>
+            <span>{{medico.ativo}}</span>
+        </dd>
+        <dt><span jhiTranslate="desafioMaisVidaApp.medico.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'desafioMaisVidaApp.StatusMedicoEnum.' + medico.status}}">{{medico.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="desafioMaisVidaApp.medico.cidade">Cidade</span></dt>
+        <dd>
+            <span>{{medico.cidade}}</span>
+        </dd>
+        <dt><span jhiTranslate="desafioMaisVidaApp.medico.estado">Estado</span></dt>
+        <dd>
+            <span>{{medico.estado}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'medico/'+ medico.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -77,6 +77,19 @@ security:
             user-info-uri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/userinfo
             token-info-uri: http://localhost:9080/auth/realms/jhipster/protocol/openid-connect/token/introspect
             prefer-token-info: false
+            ################### Okta ###############
+#        client:
+#            access-token-uri: https://https://dev-840282.oktapreview.com/oauth2/default/v1/token
+#            user-authorization-uri: https://dev-840282.oktapreview.com/oauth2/default/v1/authorize
+#            client-id: 0oae6q3k8qZqKFWiy0h7
+#            client-secret: RoVdLTxVjy_9EIWloUBktZj4xe_XfQun9pXjYIlx
+#            client-authentication-scheme: form
+#            scope: openid profile email
+#        resource:
+#            filter-order: 3
+#            user-info-uri: https://dev-840282.oktapreview.com/oauth2/default/v1/userinfo
+#            token-info-uri: https://dev-840282.oktapreview.com/oauth2/default/v1/introspect
+#            prefer-token-info: false
 
 server:
     session:
